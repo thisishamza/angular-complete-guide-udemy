@@ -1,11 +1,20 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <hr/>
+      <hr />
       <app-server></app-server>
       <app-server></app-server>
       <!--- This is an example of property binding with square binding [] -->
-      <button type="button" class="btn btn-default customButton" [disabled]="!allowNewServer">Add Server</button>
+      <button
+        type="button"
+        class="btn btn-default customButton"
+        [disabled]="!allowNewServer"
+      >
+        Add Server
+      </button>
+      <!---Whenver you want to show something just use string interpolation but if you want to change some property use property binding-->
+      <p>Button Status: {{ allowNewServer }}</p>
+      <p [innerHTML]="allowNewServer"></p>
     </div>
   </div>
 </div>
