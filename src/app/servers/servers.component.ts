@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   //you can use class name as selector '.app-servers' also, in html you will have use a div having this class
   selector: 'app-servers', //works just like a css selector
@@ -20,7 +19,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer(){
-    this.serverCreationStatus = 'Server was created.'
+    this.serverCreationStatus = 'Server was created with name:' + this.serverName;
   }
   OnUpdateServerName(event: Event){
     this.serverName = (<HTMLInputElement>event.target).value; //explicit casting of input type for typescript

@@ -29,6 +29,11 @@
         (input)="OnUpdateServerName($event)"
       />
       <p>{{serverName}}</p>
+
+      <hr/>
+      <!--two way binding-->
+      <label>Two Way Binding</label>
+      <input type="text" class="form-control" [(ngModel)]="serverName">
     </div>
   </div>
 </div>
