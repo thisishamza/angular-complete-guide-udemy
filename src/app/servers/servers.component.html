@@ -34,6 +34,11 @@
       <!--two way binding-->
       <label>Two Way Binding</label>
       <input type="text" class="form-control" [(ngModel)]="serverName">
+
+      <!--- FOr assignment of data binding-->
+      <p>Button status: {{isInputFilled}}</p>
+      <button type="button" class="btn btn-default" (click)="resetServer()" [disabled]="isInputFilled">Reset Server</button>
+      <button type="button" class="btn btn-default" (click)="serverName=''" [disabled]="serverName=== '' ">Reset Server with instructor solution</button>
     </div>
   </div>
 </div>
