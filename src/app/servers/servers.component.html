@@ -9,12 +9,26 @@
         type="button"
         class="btn btn-default customButton"
         [disabled]="!allowNewServer"
+        (click)="onCreateServer()"
       >
+        <!--- (click) this is event binding--->
         Add Server
       </button>
       <!---Whenver you want to show something just use string interpolation but if you want to change some property use property binding-->
       <p>Button Status: {{ allowNewServer }}</p>
       <p [innerHTML]="allowNewServer"></p>
+      <p>Server Creation Status: {{ serverCreationStatus }}</p>
+
+      <hr />
+
+      <!--Event binding example-->
+      <label>Server Name</label>
+      <input
+        type="text"
+        class="form-control"
+        (input)="OnUpdateServerName($event)"
+      />
+      <p>{{serverName}}</p>
     </div>
   </div>
 </div>
