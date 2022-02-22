@@ -1,0 +1,23 @@
+<div class="container">
+  <p>assesment3 works!</p>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="setParagraphVisibility()"
+  >
+    Display Details
+  </button>
+  <p *ngIf="paragraphStatus === true">
+    This is a test assesment for checking what you have learned before in
+    directives.<br />Different directives exits structural and attribute
+    directives. Star sign is used with strucutral.
+  </p>
+
+  <p></p>
+  <p
+    *ngFor="let time of timestamp; let i = index"
+    [ngStyle]="{ backgroundColor: i >= 5 ? 'blue' : 'transparent' }"
+  >
+    {{ time }}
+  </p>
+</div>
