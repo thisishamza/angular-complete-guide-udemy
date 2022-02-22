@@ -10,6 +10,7 @@ export class ServersComponent implements OnInit {
   serverCreationStatus:string ='No server was created.';
   serverName:string = '';
   isInputFilled:boolean = false;
+  servers=['server1','server2'];
   constructor() {
     setTimeout(() =>{
       this.allowNewServer = true;
@@ -21,6 +22,8 @@ export class ServersComponent implements OnInit {
 
   onCreateServer(){
     this.serverCreationStatus = 'Server was created with name:' + this.serverName;
+    this.servers.push(this.serverName);
+    console.log(this.servers);
   }
   OnUpdateServerName(event: Event){
     this.serverName = (<HTMLInputElement>event.target).value; //explicit casting of input type for typescript
