@@ -8,6 +8,8 @@ export class BasicHighlightDirective implements OnInit {
   }
 
   ngOnInit() {
+    // it's not a good practice to directly access the elements here
+    // because sometimes angular can render your templates without a DOM
     this.elementRef.nativeElement.style.backgroundColor = 'green';
   }
 }
