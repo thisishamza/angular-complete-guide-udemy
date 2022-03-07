@@ -2,25 +2,25 @@
   <div class="row">
     <div class="col-xs-12">
       <button
-        class="btn btn-primary"
-        (click)="onlyOdd = !onlyOdd">Only show odd numbers
+        (click)="onlyOdd = !onlyOdd"
+        class="btn btn-primary">Only show odd numbers
       </button>
       <br><br>
       <ul class="list-group">
         <div *ngIf="onlyOdd">
           <li
-            class="list-group-item"
-            [ngClass]="{odd:odd%2!==0}"
             *ngFor="let odd of oddNumbers"
+            [ngClass]="{odd:odd%2!==0}"
+            class="list-group-item"
           >{{odd}}
           </li>
         </div>
         <div *ngIf="!onlyOdd">
           <li
-            class="list-group-item"
+            *ngFor="let even of evenNumbers"
             [ngClass]="{even:even%2==0}"
             [ngStyle]="{backgroundColor:even%2==0?'yellow':'transparent'}"
-            *ngFor="let even of evenNumbers"
+            class="list-group-item"
           >{{even}}
           </li>
         </div>
@@ -29,7 +29,8 @@
         <p>Only odd</p>
       </ng-template>
       <p appBasicHighlight>Style me with Basic Directive</p>
-      <p appBetterHighlight>Style me with Better Directive</p>
+      <!--      binding with custom property-->
+      <p [defaultColor]="'yellow'" [highlightColor]="'red'" appBetterHighlight>Style me with Better Directive</p>
     </div>
   </div>
 </div>
